@@ -1,0 +1,93 @@
+@import "colors";
+@import "mixins";
+
+h2{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fff;
+    height: 100%;
+    border-bottom: 2px solid transparent;
+    font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.trailer-section .trailer-card-wrapper {
+    color: #eb2328;
+    background-color: #000;
+    border-radius: 1rem;
+    padding: .5rem;
+    font-weight: 700;
+}
+
+.trailer-card-wrapper {
+    width: 75vw;
+    height: 40vh;
+    @include desktop{
+        width: 30vw;
+        height: 48vh;
+    };
+    @include big-tablet{
+        width: 56vw;
+        height: 51vh;
+    };
+    @include small-tablet{
+        height: 45vh;
+    }
+}
+
+
+.trailers-section{
+    display: grid;
+    grid-gap: 1rem;
+    min-height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 10rem;
+    @include desktop{
+        grid-template-columns: repeat(3,1fr);
+    }
+    @include big-tablet{
+        grid-template-columns: repeat(1,1fr);
+    }
+    @include small-tablet{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    @include phone{
+        grid-template-columns: 1fr;
+        width: 436px;
+        max-width: 436px;
+    }
+    grid-template-rows: auto;
+    justify-items: center;
+
+    .trailer-card-wrapper{
+        color: $red;
+        background-color: black;
+        border-radius: 1rem;
+        padding: 0.5rem;
+        font-weight: bold;
+    }
+
+}
+iframe{
+    height: 30vh;
+    width: 72vw;
+
+    @include desktop{
+        width: 29vw;
+        height: 40vh
+    };
+    @include big-tablet{
+        width: 54vw;
+        height: 42vh;
+    };
+    @include small-tablet{
+        height: 37vh;
+    }
+}

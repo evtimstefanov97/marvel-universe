@@ -1,18 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Quicksand:400);
-@import url(https://fonts.googleapis.com/css?family=Raleway:300);
-
-
-$red:#eb2328;
-$lightblack:#22262a;
-$grey:#393939;
-$orange:#e8b63e;
-$card-color:#37474f;
-$card-bgn:#151515;
-
-$big-tablet-width: 1024px;
-$small-tablet-width: 768px;
-$desktop-width: 1024px;
-$phone-width: 479px;
+@import "colors";
+@import "mixins";
 
 @mixin big-tablet {
   @media (min-width: #{$small-tablet-width}) and (max-width: #{$desktop-width - 1px }) {
@@ -37,31 +24,11 @@ $phone-width: 479px;
     }
 }
 
-
-*{
-    box-sizing: border-box;
-}
-
-body{
-    background: $lightblack;
-    margin: 0;
-    padding: 0;
-    height: 100%;    
-}
-html{
-    margin: 0;
-    padding: 0;
-}
-
-
-
-
-
 .heroes-section{
     display: grid;
     grid-gap: 1rem;
     min-height: 100%;
-    margin: 0 auto -50px;
+    margin: 0 auto;
     align-items: center;
     padding: 2rem;
     margin-bottom: 10rem;
@@ -76,8 +43,8 @@ html{
     }
     @include phone{
         grid-template-columns: 1fr;
-        width: 479px;
-        max-width: 479px;
+        width: 436px;
+        max-width: 436px;
     }
     grid-template-rows: auto;
     justify-items: center;
@@ -89,129 +56,6 @@ html{
         padding: 0.5rem;
         font-weight: bold;
     }
-}
-// header{
-//     margin: 0 auto;
-//     display: flex;
-//     justify-content: center
-// }
-
-
-.nav-link {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    color: #fff;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border-bottom: 2px solid transparent;
-}
-.nav-link {
-    font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 16px;
-    text-transform: uppercase;
-}
-.nav-upper {
-    height: 52px;
-    border-bottom: 1px solid $grey;
-    padding: 0 20px;
-}
-
-.nav-linkContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
-    &:hover{
-            outline: -webkit-focus-ring-color auto 5px;
-            outline-color: $orange;
-            outline-style: auto;
-            outline-width: 5px;
-    };
-}
-.nav-linkWrapper {
-    &:hover{
-        border-bottom: 1px solid $red
-    };
-    text-transform: uppercase;
-    font-weight: 800;
-    height: 1.7rem;
-    padding: 0.5rem 1.7rem;
-    cursor: pointer;
-    list-style: none;
-}
-
-.nav-logo {
-    width: 214px;
-    margin: auto;
-    left: 0;
-    right: 0;
-    height: 52px;
-}
-
-.nav-tabAndLogoContainer,.nav-lower {
-    max-width: 1200px;
-    margin: auto;
-}
-
-
-.navigation-container a {
-    text-decoration: none!important;
-}
-
-.nav-lower, .nav-tabAndLogoContainer, .nav-upper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.navigation__container a {
-    text-decoration: none!important;
-}
-.nav-link {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    color:white;
-    height: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border-bottom: 2px solid transparent;
-}
-
-.nav-link {
-    font-family: DIN Next W01 Regular,Trebuchet MS,Helvetica,Arial,sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 16px;
-    text-transform: uppercase;
-}
-
-.page__footer {
-    background: black;
-    width: 100%;
-    padding: 50px 0 38px;
-    height: 50px;
-    @include phone{
-        max-width: 500px;
-        width: 500px;
-    };
 }
 
 .slider__item .mvl-card {
@@ -336,9 +180,39 @@ figure.img__wrapper {
     transition: all .17s ease-in-out;
 }
 
+.mvl-card--explore .card-body__headline {
+    color: #fff;
+    font-family: DINNextW01-CondensedMed,Trebuchet MS,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
 .mvl-card--explore .card-body .card-footer__micro-description {
     color: #999;
     text-transform: uppercase;
     font-size: 16px;
+    height: 25px;
     line-height: 16px;
+    @include big-tablet{
+        font-size: 12px;
+        line-height: 14px;
+    };
+    @include small-tablet{
+        font-size: 10px;
+        line-height: 12px;
+    };
+    @include desktop{
+        font-size: 12px;
+        line-height: 14px;
+    };
+    @include phone{
+        font-size: 11px;
+        line-height: 13px;
+    };
+}
+a.explore__link {
+    text-decoration: none;
 }
