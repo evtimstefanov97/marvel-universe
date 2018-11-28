@@ -37,12 +37,23 @@
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
+   
     &:hover{
             outline: -webkit-focus-ring-color auto 5px;
             outline-color: $orange;
             outline-style: auto;
             outline-width: 5px;
     };
+    @include small-phone{
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: auto;
+        padding: 1.2rem 0rem 1.2rem 0rem;
+    }
 }
 .nav-linkWrapper {
     &:hover{
@@ -78,11 +89,9 @@
 }
 
 .navigation-container{
-    @include phone{
-        max-width: 436px;
-        width: 436px;
-        margin: 0 auto;
-    }
+
+    margin: 0 auto;
+
 }
 
 .nav-lower, .nav-tabAndLogoContainer, .nav-upper {

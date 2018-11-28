@@ -50,10 +50,3 @@
     }
 
 }
-
-.page__footer{
-    position: absolute;
-    @include phone{
-        position: relative;
-    }
-}

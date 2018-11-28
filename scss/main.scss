@@ -20,16 +20,30 @@ html{
 
 
 .page__footer {
+    position: absolute;
     background: black;
     width: 100%;
     padding: 50px 0 38px;
     bottom: 0px;
     display: block;
     height: 50px;
-    @include phone{
-        max-width: 436px;
-        width: 436px;
+
+    @include small-phone{
+        position: relative;
     }
+    @include phone{
+        position: relative;
+    }
+    @include small-tablet{
+        position: relative;
+    }
+    @include big-tablet {
+        position: relative;
+    }
+    @include desktop{
+        position: relative;
+    }
+
 }
 
 .navigation-container{
