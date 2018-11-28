@@ -1,0 +1,59 @@
+@import "colors";
+@import "mixins";
+
+.mvl-lore {
+    display: grid;
+    grid-gap: 1rem;
+    min-height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    padding: 2rem;
+    justify-items: center;
+
+    @include phone{
+        width: 436px;
+        max-width: 436px;
+    }
+
+
+    .mvl-lore-wrapper{
+        color: white;
+        text-align: center;
+        font-family: DINNextW01-CondensedMed,Trebuchet MS,Helvetica,Arial,sans-serif;
+        background-color: black;
+        border-radius: 1rem;
+        padding: 0.7rem;
+        font-weight: bold;
+    };
+
+    .mvl-lore-content,
+    .mvl-lore-editors{
+        font-family: DINNextW01-CondensedMed,Trebuchet MS,Helvetica,Arial,sans-serif;
+        font-size: 12px;
+        letter-spacing: 1px;
+        line-height: 12px;
+        text-transform: uppercase;
+        -webkit-transform: translate3d(0) scale(1);
+        transform: translate3d(0) scale(1);
+        -webkit-transition: all .17s ease-in-out;
+        transition: all .17s ease-in-out;
+        color: #c3c3c3;
+        text-align: center;
+    };
+
+    .mvl-lore-content{
+        grid-column: 2;
+    } 
+
+    .mvl-lore-editors{
+        grid-column: 1;
+    }
+
+}
+
+.page__footer{
+    position: absolute;
+    @include phone{
+        position: relative;
+    }
+}
