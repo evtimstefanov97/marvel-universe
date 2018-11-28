@@ -1,36 +1,100 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400);
 @import url(https://fonts.googleapis.com/css?family=Raleway:300);
 
+
+$red:#eb2328;
+$lightblack:#22262a;
+$grey:#393939;
+$orange:#e8b63e;
+$card-color:#37474f;
+$card-bgn:#151515;
+
+$big-tablet-width: 1024px;
+$small-tablet-width: 768px;
+$desktop-width: 1024px;
+$phone-width: 479px;
+
+@mixin big-tablet {
+  @media (min-width: #{$small-tablet-width}) and (max-width: #{$desktop-width - 1px }) {
+    @content;
+  }
+}
+@mixin small-tablet{
+    @media(min-width: #{$phone-width}) and (max-width: #{$small-tablet-width - 1px }){
+        @content;
+    }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin phone{
+    @media(max-width: #{$phone-width}){
+        @content;
+    }
+}
+
+
 *{
     box-sizing: border-box;
 }
 
 body{
-    background: #22262a;
+    background: $lightblack;
     margin: 0;
+    padding: 0;
+    height: 100%;    
 }
+html{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
 .heroes-section{
     display: grid;
     grid-gap: 1rem;
+    min-height: 100%;
+    margin: 0 auto -50px;
     align-items: center;
     padding: 2rem;
-    grid-template-columns: repeat(4,1fr);
+    margin-bottom: 10rem;
+    @include desktop{
+        grid-template-columns: repeat(4,1fr);
+    }
+    @include big-tablet{
+        grid-template-columns: repeat(3,1fr);
+    }
+    @include small-tablet{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include phone{
+        grid-template-columns: 1fr;
+        width: 479px;
+        max-width: 479px;
+    }
     grid-template-rows: auto;
     justify-items: center;
 
     .hero-card-wrapper{
-        color: red;
+        color: $red;
         background-color: black;
         border-radius: 1rem;
         padding: 0.5rem;
         font-weight: bold;
     }
 }
-header{
-    margin: 0 auto;
-    display: flex;
-    justify-content: center
-}
+// header{
+//     margin: 0 auto;
+//     display: flex;
+//     justify-content: center
+// }
 
 
 .nav-link {
@@ -56,7 +120,7 @@ header{
 }
 .nav-upper {
     height: 52px;
-    border-bottom: 1px solid #393939;
+    border-bottom: 1px solid $grey;
     padding: 0 20px;
 }
 
@@ -69,18 +133,19 @@ header{
     padding: 5px;
     &:hover{
             outline: -webkit-focus-ring-color auto 5px;
-            outline-color: #e8b63e;
+            outline-color: $orange;
             outline-style: auto;
             outline-width: 5px;
     };
 }
 .nav-linkWrapper {
     &:hover{
-        border-bottom: 2px solid #eb2328;
+        border-bottom: 1px solid $red
     };
     text-transform: uppercase;
     font-weight: 800;
-    padding: 0 0.5rem;
+    height: 1.7rem;
+    padding: 0.5rem 1.7rem;
     cursor: pointer;
     list-style: none;
 }
@@ -122,7 +187,7 @@ header{
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    color: #fff;
+    color:white;
     height: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -138,46 +203,15 @@ header{
     text-transform: uppercase;
 }
 
-@media (min-width: 839px){
-    .main-footer {
-        padding: 80px 0 30px;
-    }
-}
-.main-footer {
-    background: #000;
+.page__footer {
+    background: black;
     width: 100%;
     padding: 50px 0 38px;
-    position: absolute;
-    bottom: 0;
-}
-
-@media (min-width: 839px){
-    .main-footer__container {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        padding: 0 1.25rem;
-    }
-}
-
-@media (min-width: 1241px){
-    .main-footer__container {
-        padding: 0;
-    }
-}
-
-@media (min-width: 961px){
-    .main-footer__container {
-        padding: 0 20px;
-    }
-}
-
-.main-footer__container {
-    max-width: 1200px;
-    padding: 0 30px;
-    margin: 0 auto;
+    height: 50px;
+    @include phone{
+        max-width: 500px;
+        width: 500px;
+    };
 }
 
 .slider__item .mvl-card {
@@ -197,7 +231,7 @@ header{
 }
 
 .mvl-card--explore .card-thumb-frame {
-    background: #eb2328;
+    background: $red;
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -213,7 +247,7 @@ header{
 .mvl-card--explore .card-thumb-frame .img__wrapper {
     position: relative;
     overflow: hidden;
-    height: 170px;
+    height: 320px;
 }
 figure.img__wrapper {
     margin: 0;
@@ -243,8 +277,8 @@ figure.img__wrapper {
 }
 
 .mvl-card--explore .card-body.is-sliding {
-    background: #151515;
-    color: #37474f;
+    background: $card-bgn;
+    color: $card-color;
     -webkit-transition: color .3s;
     transition: color .3s;
 }
@@ -271,7 +305,7 @@ figure.img__wrapper {
 }
 
 .hero-card-wrapper{
-    width: 66.2299%;
+    width: 220px;
 }
 
 .mvl-card--explore .card-body .card-footer {
