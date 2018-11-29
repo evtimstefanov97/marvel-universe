@@ -6,6 +6,9 @@
 *{
     box-sizing: border-box;
 }
+*, :after, :before {
+    -webkit-font-smoothing: antialiased;
+}
 
 body{
     background: white;
@@ -20,7 +23,7 @@ html{
 
 
 .page__footer {
-    position: absolute;
+    position: relative;
     background: black;
     width: 100%;
     padding: 50px 0 38px;
@@ -28,22 +31,7 @@ html{
     display: block;
     height: 50px;
 
-    @include small-phone{
-        position: relative;
-    }
-    @include phone{
-        position: relative;
-    }
-    @include small-tablet{
-        position: relative;
-    }
-    @include big-tablet {
-        position: relative;
-    }
-    @include desktop{
-        position: relative;
-    }
-
+ 
 }
 
 .navigation-container{

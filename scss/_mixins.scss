@@ -33,3 +33,21 @@ $phone-width-1: 320px;
         @content;
     }
 }
+
+@mixin medium-to-full{
+    @media(min-width: #{$small-tablet-width}){
+        @content;
+    }
+}
+
+@mixin small-to-medium{
+    @media(min-width: #{$phone-width-1}) and (max-width:#{$small-tablet-width}){
+        @content;
+    }
+}
+
+@mixin medium{
+    @media(min-width: #{$phone-width-2}) and (max-width:#{$small-tablet-width}){
+        @content;
+    }
+}
