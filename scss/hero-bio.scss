@@ -158,7 +158,7 @@ figure.img-wrapper {
             }
 
             @include medium-to-full{
-                grid-template-areas: "leftbody";
+                grid-template-areas: "left body";
             }
 
             .content-block__left-rail{
