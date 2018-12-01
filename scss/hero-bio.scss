@@ -2,7 +2,7 @@
 
 
 
-.masthead__background .built__background {
+.bio-full-pic__background .built__background {
     width: 100%;
     height: 100%;
     background-position: top;
@@ -39,7 +39,7 @@ figure.built__background, figure img {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-.masthead .masthead__background {
+.bio-full-pic .bio-full-pic__background {
     @include medium-to-full{
         height: 400px;
     }
@@ -61,7 +61,7 @@ figure.img-wrapper {
     overflow: hidden;
 }
 
-.masthead__background {
+.bio-full-pic__background {
     background-color: #151515;
     height: 280px;
     left: 0;
@@ -74,7 +74,7 @@ figure.img-wrapper {
 }
 
 
-.masthead .masthead__wrapper {
+.bio-full-pic .bio-full-pic__wrapper {
     @include medium-to-full{
         min-height: 410px;
         max-height: 640px;
@@ -84,7 +84,7 @@ figure.img-wrapper {
     }
 }
 
-.masthead__wrapper {
+.bio-full-pic__wrapper {
     position: relative;
     -webkit-clip-path: polygon(0 0,0 99%,100% 95%,100% 0);
     clip-path: polygon(0 0,0 99%,100% 95%,100% 0);
@@ -95,10 +95,10 @@ figure.img-wrapper {
 
 }
 
-.masthead.subnav{
+.bio-full-pic.subnav{
     padding: 0 0 15px;
 }
-.masthead{
+.bio-full-pic{
     position: relative;
     width: 100%;
     margin: 0;
@@ -158,11 +158,11 @@ figure.img-wrapper {
             }
 
             @include medium-to-full{
-                grid-template-areas: "leftRail body";
+                grid-template-areas: "leftbody";
             }
 
             .content-block__left-rail{
-                grid-area: leftRail;
+                grid-area: left;
                 display: block;
                 width: 100%;
             }
