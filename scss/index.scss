@@ -49,4 +49,14 @@
         grid-column: 1;
     }
 
+  
+
+}
+
+.page__footer {
+    position: absolute;
+
+    @include small-to-medium{
+        position: relative;  
+    }
 }
